@@ -8,9 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class SQLHelper {
-
     private static final QueryRunner runner = new QueryRunner();
-
     @SneakyThrows
     public static Connection getConn() {
         String dbUrl = System.getProperty("db.url");
@@ -18,7 +16,6 @@ public class SQLHelper {
         String password = System.getProperty("password");
         return DriverManager.getConnection (dbUrl, login, password);
     }
-
     @SneakyThrows
     public static DataGenerator.StatusPay getStatusPay() {
         String statusSQL = "SELECT status FROM payment_entity order by created DESC LIMIT 1";
