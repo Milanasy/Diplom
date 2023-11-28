@@ -47,8 +47,6 @@ public class PayTest {
         Assertions.assertEquals("APPROVED", statusPay.getStatus());
     }
 
-
-
     @Test
     public void shouldNotConfirmCardWithDeclineCard() {
         PayPage payPage = new PayPage();
